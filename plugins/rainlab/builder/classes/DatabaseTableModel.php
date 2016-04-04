@@ -104,15 +104,15 @@ class DatabaseTableModel extends BaseModel
         ];
 
         // 修改一下表名约束
-        // Validator::extend('tablePrefix', function($attribute, $value, $parameters) use ($prefix) {
-        //     $value = trim($value);
+        Validator::extend('tablePrefix', function($attribute, $value, $parameters) use ($prefix) {
+            $value = trim($value);
 
-        //     if (!Str::startsWith($value, $prefix)) {
-        //         return false;
-        //     }
+            // if (!Str::startsWith($value, $prefix)) {
+            //     return false;
+            // }
 
-        //     return true;
-        // });
+            return true;
+        });
 
         Validator::extend('uniqueTableName', function($attribute, $value, $parameters) {
             $value = trim($value);
