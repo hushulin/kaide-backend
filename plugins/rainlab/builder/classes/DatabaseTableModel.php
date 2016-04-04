@@ -103,15 +103,16 @@ class DatabaseTableModel extends BaseModel
             'name.unique_table_name' => Lang::get('rainlab.builder::lang.database.error_table_already_exists', ['name'=>$this->name])
         ];
 
-        Validator::extend('tablePrefix', function($attribute, $value, $parameters) use ($prefix) {
-            $value = trim($value);
+        // 修改一下表名约束
+        // Validator::extend('tablePrefix', function($attribute, $value, $parameters) use ($prefix) {
+        //     $value = trim($value);
 
-            if (!Str::startsWith($value, $prefix)) {
-                return false;
-            }
+        //     if (!Str::startsWith($value, $prefix)) {
+        //         return false;
+        //     }
 
-            return true;
-        });
+        //     return true;
+        // });
 
         Validator::extend('uniqueTableName', function($attribute, $value, $parameters) {
             $value = trim($value);
@@ -177,7 +178,7 @@ class DatabaseTableModel extends BaseModel
             foreach ($this->columns as $innerIndex=>$innerColumn) {
                 if ($innerIndex != $outerIndex && $innerColumn['name'] == $outerColumn['name']) {
                     throw new ValidationException([
-                        'columns' => Lang::get('rainlab.builder::lang.database.error_table_duplicate_column', 
+                        'columns' => Lang::get('rainlab.builder::lang.database.error_table_duplicate_column',
                             ['column' => $outerColumn['name']]
                         )
                     ]);
