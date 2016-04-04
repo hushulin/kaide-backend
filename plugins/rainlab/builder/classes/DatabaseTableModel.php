@@ -103,13 +103,12 @@ class DatabaseTableModel extends BaseModel
             'name.unique_table_name' => Lang::get('rainlab.builder::lang.database.error_table_already_exists', ['name'=>$this->name])
         ];
 
-        // 修改一下表名约束
         Validator::extend('tablePrefix', function($attribute, $value, $parameters) use ($prefix) {
             $value = trim($value);
 
-            // if (!Str::startsWith($value, $prefix)) {
-            //     return false;
-            // }
+            if (!Str::startsWith($value, $prefix)) {
+                return false;
+            }
 
             return true;
         });

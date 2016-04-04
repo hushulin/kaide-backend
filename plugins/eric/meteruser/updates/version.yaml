@@ -3,3 +3,6 @@
 1.0.2:
     - 'Created table eric_meteruser_users'
     - builder_table_create_eric_meteruser_users.php
+1.0.3:
+    - 'Created table users'
+    - builder_table_create_users.php
