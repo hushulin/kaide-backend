@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Xiaofei
+
+# Model Form Field configuration
+form: $/hushulin/kaide/models/xiaofei/fields.yaml
+
+# Model Class name
+modelClass: Hushulin\Kaide\Models\Xiaofei
+
+# Default redirect location
+defaultRedirect: hushulin/kaide/xiaofei
+
+# Create page
+create:
+    title: Create Xiaofei
+    redirect: hushulin/kaide/xiaofei/update/:id
+    redirectClose: hushulin/kaide/xiaofei
+
+# Update page
+update:
+    title: Edit Xiaofei
+    redirect: hushulin/kaide/xiaofei
+    redirectClose: hushulin/kaide/xiaofei
+
+# Preview page
+preview:
+    title: Preview Xiaofei

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Notification
+
+# Model Form Field configuration
+form: $/hushulin/kaide/models/notification/fields.yaml
+
+# Model Class name
+modelClass: Hushulin\Kaide\Models\Notification
+
+# Default redirect location
+defaultRedirect: hushulin/kaide/notification
+
+# Create page
+create:
+    title: Create Notification
+    redirect: hushulin/kaide/notification/update/:id
+    redirectClose: hushulin/kaide/notification
+
+# Update page
+update:
+    title: Edit Notification
+    redirect: hushulin/kaide/notification
+    redirectClose: hushulin/kaide/notification
+
+# Preview page
+preview:
+    title: Preview Notification
