@@ -1,6 +1,0 @@
-plugin:
-    name: 'eric.meteruser::lang.plugin.name'
-    description: 'eric.meteruser::lang.plugin.description'
-    author: Eric
-    icon: oc-icon-user
-    homepage: ''
