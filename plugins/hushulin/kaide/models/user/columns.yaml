@@ -7,20 +7,20 @@ columns:
         label: ID
         searchable: true
     name:
-        label: "用户名"
+        label: name
         searchable: true
     password:
-        label: "密码"
+        label: password
         searchable:false
     default_meter:
-        label: "默认水表号"
+        label: default_meter
         searchable:true
     wechat_number:
-        label: "绑定微信号"
+        label: wechat_number
         searchable: true
     xiaoqu:
-        label: "小区名"
+        label: xiaoqu
         searchable:true
     created_at:
-        label: "创建时间"
+        label: created_at
         searchable: true
