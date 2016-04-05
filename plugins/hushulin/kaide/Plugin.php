@@ -13,7 +13,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => '后台管理系统',
+            'name'        => 'Kaide后台',
             'description' => 'kaide后台系统，包括用户，水表，缴费，通知等模块',
             'author'      => 'Hushulin',
             'icon'        => 'icon-home'
@@ -40,9 +40,9 @@ class Plugin extends PluginBase
     {
         return [
             'kaide' => [
-                'label'       => 'Kaide后台',
+                'label'       => '后台管理系统',
                 'url'         => Backend::url('hushulin/kaide/user'),
-                'icon'        => 'icon-leaf',
+                'icon'        => 'icon-home',
                 'permissions' => ['hushulin.kaide.*'],
                 'order'       => 500,
 
