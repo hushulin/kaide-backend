@@ -6,3 +6,12 @@ fields:
     id:
         label: ID
         disabled: true
+    name:
+        label: '用户名'
+        type: text
+    password:
+        label: '密码'
+        type: text
+    xiaoqu:
+        label: '小区'
+        type: text
