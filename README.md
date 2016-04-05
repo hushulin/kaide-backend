@@ -22,3 +22,45 @@ October CMS has a few system requirements:
 
 As of PHP 5.5, some OS distributions may require you to manually install the PHP JSON extension.
 When using Ubuntu, this can be done via ``apt-get install php5-json``.
+
+
+<div class="toolbar-item" data-calculate-width>
+        <ul>
+            <li class="icon preview with-tooltip">
+                <a
+                    href="<?= URL::to('/') ?>"
+                    target="_blank"
+                    title="<?= e(trans('backend::lang.tooltips.preview_website')) ?>">
+                    <i class="icon-crosshairs"></i>
+                </a>
+            </li>
+            <li class="highlight account">
+                <a href="javascript:;" onclick="$.oc.layout.toggleAccountMenu(this)">
+                    <img src="<?= $this->user->getAvatarThumb(50, ['extension' => 'png']) ?>">
+                    <span class="hidden-xs">
+                        <?= e($this->user->first_name.' '.$this->user->last_name) ?>
+                    </span>
+                </a>
+                <div class="mainmenu-accountmenu">
+                    <ul>
+                        <?php foreach ($mySettings as $category => $items): ?>
+                            <?php foreach ($items as $item): ?>
+                                <li>
+                                    <a href="<?= $item->url ?>">
+                                        <?= e(trans($item->label)) ?>
+                                    </a>
+                                </li>
+                            <?php endforeach ?>
+                            <li class="divider"></li>
+                        <?php endforeach ?>
+
+                        <li>
+                            <a href="<?= Backend::url('backend/auth/signout') ?>">
+                                <?= e(trans('backend::lang.account.sign_out')) ?>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
