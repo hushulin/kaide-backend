@@ -7,9 +7,9 @@ fields:
         label: ID
         disabled: true
     title:
-    	label: '标题'
-    	disabled: false
-    	type: text
+        label: '标题'
+        disabled: false
+        type: text
     content:
         label: '通知内容'
         disabled: false
