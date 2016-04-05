@@ -13,10 +13,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Kaide后台',
+            'name'        => '后台管理系统',
             'description' => 'kaide后台系统，包括用户，水表，缴费，通知等模块',
             'author'      => 'Hushulin',
-            'icon'        => 'icon-leaf'
+            'icon'        => 'icon-home'
         ];
     }
 
