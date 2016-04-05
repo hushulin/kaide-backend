@@ -11,7 +11,7 @@ columns:
         searchable: true
     password:
         label: "密码"
-        searchable: false
+        searchable:false
     default_meter:
         label: "默认水表号"
         searchable: true
