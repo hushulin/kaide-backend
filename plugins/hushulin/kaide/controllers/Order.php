@@ -28,10 +28,12 @@ class Order extends Controller
 
         // $mydpik->bindToController();
 
-        $this->addCss('/plugins/hushulin/kaide/vendor/pikaday/css/pikaday.css', 'core');
-        $this->addCss('/plugins/hushulin/kaide/vendor/clockpicker/css/jquery-clockpicker.css', 'core');
-        $this->addCss('/plugins/hushulin/kaide/css/datepicker.css', 'core');
-        $this->addJs('/plugins/hushulin/kaide/js/build-min.js', 'core');
+        // $this->addCss('/plugins/hushulin/kaide/vendor/pikaday/css/pikaday.css', 'core');
+        // $this->addCss('/plugins/hushulin/kaide/vendor/clockpicker/css/jquery-clockpicker.css', 'core');
+        // $this->addCss('/plugins/hushulin/kaide/css/datepicker.css', 'core');
+        // $this->addJs('/plugins/hushulin/kaide/js/build-min.js', 'core');
+        //
+        $this->addJs('/plugins/hushulin/kaide/My97DatePicker/WdatePicker.js');
 
     }
 }
