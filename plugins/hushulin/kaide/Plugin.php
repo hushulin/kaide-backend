@@ -45,7 +45,47 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-leaf',
                 'permissions' => ['hushulin.kaide.*'],
                 'order'       => 500,
+
+
+                'sideMenu' => [
+                    'user' => [
+                        'label' => '用户',
+                        'url' => Backend::url('hushulin/kaide/user'),
+                        'icon' => 'icon-user',
+                        'permissions' => ['hushulin.kaide.*'],
+                        'order' => 500,
+                    ],
+                ],
             ],
         ];
     }
 }
+
+
+// public function registerNavigation()
+// {
+//     return [
+//         'blog' => [
+//             'label'       => 'Blog',
+//             'url'         => Backend::url('acme/blog/posts'),
+//             'icon'        => 'icon-pencil',
+//             'permissions' => ['acme.blog.*'],
+//             'order'       => 500,
+
+//             'sideMenu' => [
+//                 'posts' => [
+//                     'label'       => 'Posts',
+//                     'icon'        => 'icon-copy',
+//                     'url'         => Backend::url('acme/blog/posts'),
+//                     'permissions' => ['acme.blog.access_posts']
+//                 ],
+//                 'categories' => [
+//                     'label'       => 'Categories',
+//                     'icon'        => 'icon-copy',
+//                     'url'         => Backend::url('acme/blog/categories'),
+//                     'permissions' => ['acme.blog.access_categories']
+//                 ]
+//             ]
+//         ]
+//     ];
+// }
