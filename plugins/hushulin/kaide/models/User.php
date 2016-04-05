@@ -11,17 +11,17 @@ class User extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'hushulin_kaide_users';
+    public $table = 'users';
 
     /**
      * @var array Guarded fields
      */
-    protected $guarded = ['*'];
+    protected $guarded = ['id'];
 
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    // protected $fillable = [];
 
     /**
      * @var array Relations
