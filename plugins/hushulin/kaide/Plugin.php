@@ -20,6 +20,22 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers any back-end permissions used by this plugin.
+     *
+     * @return array
+     */
+    public function registerPermissions()
+    {
+
+        return [
+            'hushulin.kaide.backend' => [
+                'tab' => 'Kaide',
+                'label' => 'Kaide后台管理权限'
+            ],
+        ];
+    }
+
     public function registerNavigation()
     {
         return [
