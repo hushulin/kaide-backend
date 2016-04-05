@@ -1,20 +1,20 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: number
         searchable: true
     meter_id:
-        label: '水表号'
-        searchable: false
+        label: 水表号
+        type: text
     xiaofei_ton:
-        label: '使用吨数'
+        label: 使用吨数
+        type: text
         searchable: true
     mark:
-        label: '备注'
+        label: 备注
+        type: text
         searchable: true
     created_at:
-        label: '日期时间'
+        label: 日期时间
+        type: text
         searchable: true

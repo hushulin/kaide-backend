@@ -1,19 +1,11 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
 fields:
-    id:
-        label: ID
-        disabled: true
     title:
-        label: '标题'
+        label: 标题
+        span: full
         disabled: false
         type: text
     content:
-        label: '通知内容'
-        disabled: false
-        type: markdown
+        label: 内容
         size: huge
-        mode: split
-
+        span: full
+        type: richeditor
