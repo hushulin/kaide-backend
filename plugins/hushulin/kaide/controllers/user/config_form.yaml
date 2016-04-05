@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: User
+
+# Model Form Field configuration
+form: $/hushulin/kaide/models/user/fields.yaml
+
+# Model Class name
+modelClass: Hushulin\Kaide\Models\User
+
+# Default redirect location
+defaultRedirect: hushulin/kaide/user
+
+# Create page
+create:
+    title: Create User
+    redirect: hushulin/kaide/user/update/:id
+    redirectClose: hushulin/kaide/user
+
+# Update page
+update:
+    title: Edit User
+    redirect: hushulin/kaide/user
+    redirectClose: hushulin/kaide/user
+
+# Preview page
+preview:
+    title: Preview User

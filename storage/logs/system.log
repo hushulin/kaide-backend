@@ -208,3 +208,6 @@ Stack trace:
 #10 /var/www/kaide-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(94): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #11 /var/www/kaide-backend/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #12 {main}  
+[2016-04-05 01:31:13] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Hushulin\Kaide\Backend' not found' in /var/www/kaide-backend/plugins/hushulin/kaide/Plugin.php:27
+Stack trace:
+#0 {main}  
