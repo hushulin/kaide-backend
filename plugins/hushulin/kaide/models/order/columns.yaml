@@ -6,3 +6,18 @@ columns:
     id:
         label: ID
         searchable: true
+    user_id:
+        label: '用户'
+        searchable: false
+    meter_id:
+        label: '水表号'
+        searchable: false
+    pay_ton:
+        label: '缴费吨数'
+        searchable: true
+    pay_money:
+        label: '缴费金额'
+        searchable: true
+    created_at:
+        label: '订单创建时间'
+        searchable: true

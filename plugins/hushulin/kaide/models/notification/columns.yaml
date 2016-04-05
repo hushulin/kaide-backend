@@ -6,3 +6,12 @@ columns:
     id:
         label: ID
         searchable: true
+    title:
+        label: '通知标题'
+        searchable: true
+    content:
+        label: '通知内容'
+        searchable: true
+    created_at:
+        label: '创建时间'
+        searchable: true

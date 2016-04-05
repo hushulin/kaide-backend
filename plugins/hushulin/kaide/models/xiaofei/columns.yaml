@@ -6,3 +6,15 @@ columns:
     id:
         label: ID
         searchable: true
+    meter_id:
+        label: '水表号'
+        searchable: false
+    xiaofei_ton:
+        label: '使用吨数'
+        searchable: true
+    mark:
+        label: '备注'
+        searchable: true
+    created_at:
+        label: '日期时间'
+        searchable: true

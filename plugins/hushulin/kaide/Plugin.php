@@ -55,6 +55,27 @@ class Plugin extends PluginBase
                         'permissions' => ['hushulin.kaide.*'],
                         'order' => 500,
                     ],
+                    'order' => [
+                        'label' => '缴费列表',
+                        'url' => Backend::url('hushulin/kaide/order'),
+                        'icon' => 'icon-shopping-cart',
+                        'permissions' => ['hushulin.kaide.*'],
+                        'order' => 500,
+                    ],
+                    'xiaofei' => [
+                        'label' => '使用水量',
+                        'url' => Backend::url('hushulin/kaide/xiaofei'),
+                        'icon' => 'icon-fire',
+                        'permissions' => ['hushulin.kaide.*'],
+                        'order' => 500,
+                    ],
+                    'notification' => [
+                        'label' => '用户',
+                        'url' => Backend::url('hushulin/kaide/notification'),
+                        'icon' => 'icon-volume-up',
+                        'permissions' => ['hushulin.kaide.*'],
+                        'order' => 500,
+                    ],
                 ],
             ],
         ];
