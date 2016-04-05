@@ -25,7 +25,7 @@ class Plugin extends PluginBase
         return [
             'kaide' => [
                 'label'       => 'Kaide后台',
-                'url'         => Backend::url('hushulin/kaide/mycontroller'),
+                'url'         => Backend::url('hushulin/kaide/user'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['hushulin.kaide.*'],
                 'order'       => 500,
