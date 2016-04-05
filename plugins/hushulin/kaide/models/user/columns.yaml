@@ -6,27 +6,21 @@ columns:
     id:
         label: ID
         searchable: true
-
     name:
         label: 用户名
         searchable: true
-
     password:
         label: 密码
         searchable:false
-
     default_meter:
         label: 默认水表号
         searchable:true
-
     wechat_number:
         label: 绑定微信号
         searchable: true
-
     xiaoqu:
         label: 小区名
         searchable:true
-
     created_at:
         label: 创建时间
         searchable: true
