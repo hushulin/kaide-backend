@@ -1,6 +1,8 @@
 # ===================================
 #  List Column Definitions
 # ===================================
+# 这里有个大坑：key ： value 之间要有空格
+
 
 columns:
     id:
@@ -11,7 +13,7 @@ columns:
         searchable: true
     password:
         label: "密码"
-        searchable:false
+        searchable: false
     default_meter:
         label: "默认水表号"
         searchable: true
