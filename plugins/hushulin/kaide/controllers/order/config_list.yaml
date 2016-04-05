@@ -1,46 +1,12 @@
-# ===================================
-#  List Behavior Config
-# ===================================
-
-# Model List Column configuration
-list: $/hushulin/kaide/models/order/columns.yaml
-
-# Model Class name
+title: 'Manage Orders'
 modelClass: Hushulin\Kaide\Models\Order
-
-# List Title
-title: Manage Orders
-
-# Link URL for each record
-recordUrl: hushulin/kaide/order/update/:id
-
-# Message to display if the list is empty
-noRecordsMessage: backend::lang.list.no_records
-
-# Records to display per page
+list: $/hushulin/kaide/models/order/columns.yaml
+recordUrl: 'hushulin/kaide/order/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
 recordsPerPage: 20
-
-# Displays the list column set up button
 showSetup: true
-
-# Displays the sorting link on each column
 showSorting: true
-
-# Default sorting column
-# defaultSort:
-#     column: created_at
-#     direction: desc
-
-# Display checkboxes next to each record
-# showCheckboxes: true
-
-# Toolbar widget configuration
 toolbar:
-
-    # Search widget configuration
     search:
-        prompt: backend::lang.list.search_prompt
-
-    # Partial for toolbar buttons
+        prompt: 'backend::lang.list.search_prompt'
     buttons: list_toolbar
-

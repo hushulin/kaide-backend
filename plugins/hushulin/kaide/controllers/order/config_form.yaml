@@ -1,31 +1,14 @@
-# ===================================
-#  Form Behavior Config
-# ===================================
-
-# Record name
 name: Order
-
-# Model Form Field configuration
-form: $/hushulin/kaide/models/order/fields.yaml
-
-# Model Class name
 modelClass: Hushulin\Kaide\Models\Order
-
-# Default redirect location
+form: $/hushulin/kaide/models/order/fields.yaml
 defaultRedirect: hushulin/kaide/order
-
-# Create page
 create:
-    title: Create Order
-    redirect: hushulin/kaide/order/update/:id
+    title: 'Create Order'
+    redirect: 'hushulin/kaide/order/update/:id'
     redirectClose: hushulin/kaide/order
-
-# Update page
 update:
-    title: Edit Order
+    title: 'Edit Order'
     redirect: hushulin/kaide/order
     redirectClose: hushulin/kaide/order
-
-# Preview page
 preview:
-    title: Preview Order
+    title: 'Preview Order'
