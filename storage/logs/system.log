@@ -2761,3 +2761,10 @@ Stack trace:
 #57 /var/www/kaide-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(84): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #58 /var/www/kaide-backend/index.php(44): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #59 {main}  
+[2016-04-06 12:39:50] production.ERROR: exception 'InvalidArgumentException' with message 'Command "Hushulin.Kaide" is not defined.' in /var/www/kaide-backend/vendor/symfony/console/Symfony/Component/Console/Application.php:549
+Stack trace:
+#0 /var/www/kaide-backend/vendor/symfony/console/Symfony/Component/Console/Application.php(192): Symfony\Component\Console\Application->find('Hushulin.Kaide')
+#1 /var/www/kaide-backend/vendor/symfony/console/Symfony/Component/Console/Application.php(126): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /var/www/kaide-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(94): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/kaide-backend/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
