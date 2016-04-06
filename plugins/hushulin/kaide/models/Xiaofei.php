@@ -28,7 +28,11 @@ class Xiaofei extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+
+    public $belongsTo = [
+        'meter' => ['Hushulin\Kaide\Models\Meter'],
+    ];
+
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
