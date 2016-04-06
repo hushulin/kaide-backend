@@ -28,7 +28,11 @@ class Order extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+
+    public $belongsTo = [
+        'meters' => ['Hushulin\Kaide\Models\Meter']
+    ];
+
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
