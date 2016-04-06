@@ -30,7 +30,8 @@ class Order extends Model
     public $hasMany = [];
 
     public $belongsTo = [
-        'meter' => ['Hushulin\Kaide\Models\Meter']
+        'meter' => ['Hushulin\Kaide\Models\Meter'],
+        'user' => ['Hushulin\Kaide\Models\User'],
     ];
 
     public $belongsToMany = [];
