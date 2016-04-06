@@ -3,7 +3,6 @@
 use BackendMenu;
 use Backend\Classes\Controller;
 use Flash;
-use Hushulin\Kaide\Models\Order as KaideOrder;
 use Redirect;
 
 /**

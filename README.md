@@ -89,3 +89,21 @@ When using Ubuntu, this can be done via ``apt-get install php5-json``.
         添加用户
     </a>
 </div>
+
+
+<form class="form-elements" role="form">
+    <div class="form-group span-left">
+        <label>First name</label>
+        <input type="text" name="" value="" class="form-control" />
+    </div>
+
+    <div class="form-group span-right">
+        <label>Last name</label>
+        <input type="text" name="" value="" class="form-control" />
+    </div>
+
+    <div class="form-group span-full">
+        <label>Address</label>
+        <input type="text" name="" value="" class="form-control" />
+    </div>
+</form>

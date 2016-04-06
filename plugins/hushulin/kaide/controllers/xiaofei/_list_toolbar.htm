@@ -1,3 +1,11 @@
 <div data-control="toolbar">
-
+	<div>
+		<input onClick="WdatePicker()" style="width:150px;margin-bottom:10px;" id="date-for-order1" type="text" name="start" value="" class="form-control" data-control="datepicker" /> =
+		<input onClick="WdatePicker()" style="width:150px;" id="date-for-order2"  type="text" name="end" value="" class="form-control" data-control="datepicker" />
+		<button
+			data-request="onSearch"
+			data-request-data="start:$('#date-for-order1').val(),end:$('#date-for-order2').val()"
+		 	type="button"
+		 	class="btn btn-default icon-search">查询</button>
+	</div>
 </div>
