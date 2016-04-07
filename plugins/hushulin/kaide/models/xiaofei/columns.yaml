@@ -5,7 +5,10 @@ columns:
         searchable: true
     meter_id:
         label: 水表号
-        type: text
+        type: select
+        searchable: true
+        select: meter_number
+        relation: meter
     xiaofei_ton:
         label: 使用吨数
         type: text

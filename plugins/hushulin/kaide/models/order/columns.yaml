@@ -1,23 +1,29 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: number
         searchable: true
     user_id:
-        label: '用户'
-        searchable: false
+        label: 用户
+        type: select
+        searchable: true
+        select: name
+        relation: user
     meter_id:
-        label: '水表号'
-        searchable: false
+        label: 水表号
+        type: select
+        searchable: true
+        select: meter_number
+        relation: meter
     pay_ton:
-        label: '缴费吨数'
+        label: 缴费吨数
+        type: text
         searchable: true
     pay_money:
-        label: '缴费金额'
+        label: 缴费金额
+        type: text
         searchable: true
     created_at:
-        label: '订单创建时间'
+        label: 订单创建时间
+        type: text
         searchable: true
