@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('hushulin/kaide/notification') ?>">Notification</a></li>
+        <li><a href="<?= Backend::url('hushulin/kaide/notification') ?>">通知</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -22,7 +22,7 @@
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="Saving Notification..."
                     class="btn btn-primary">
-                    <u>S</u>ave
+                    保存
                 </button>
                 <button
                     type="button"
@@ -31,7 +31,7 @@
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="Saving Notification..."
                     class="btn btn-default">
-                    Save and Close
+                    保存并关闭
                 </button>
                 <button
                     type="button"
@@ -41,7 +41,7 @@
                     data-request-confirm="Do you really want to delete this notification?">
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('hushulin/kaide/notification') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('hushulin/kaide/notification') ?>">取消</a>
                 </span>
             </div>
         </div>
@@ -51,6 +51,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('hushulin/kaide/notification') ?>" class="btn btn-default">Return to notification list</a></p>
+    <p><a href="<?= Backend::url('hushulin/kaide/notification') ?>" class="btn btn-default">返回通知列表</a></p>
 
 <?php endif ?>

@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('hushulin/kaide/xiaofei') ?>">Xiaofei</a></li>
+        <li><a href="<?= Backend::url('hushulin/kaide/xiaofei') ?>">消费</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -14,6 +14,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('hushulin/kaide/xiaofei') ?>" class="btn btn-default">Return to xiaofei list</a></p>
+    <p><a href="<?= Backend::url('hushulin/kaide/xiaofei') ?>" class="btn btn-default">返回消费列表</a></p>
 
 <?php endif ?>
