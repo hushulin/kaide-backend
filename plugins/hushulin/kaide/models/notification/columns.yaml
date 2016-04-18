@@ -1,17 +1,19 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: number
         searchable: true
+        width: 100px
     title:
-        label: '通知标题'
+        label: 通知标题
+        type: text
         searchable: true
+        width: 150px
     content:
-        label: '通知内容'
+        label: 通知内容
+        type: text
         searchable: true
     created_at:
-        label: '创建时间'
+        label: 创建时间
+        type: text
         searchable: true

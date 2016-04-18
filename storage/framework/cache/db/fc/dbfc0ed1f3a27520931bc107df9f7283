@@ -1,4 +1,4 @@
-1459768723s:527:"a:6:{s:5:"mtime";i:1459767198;s:7:"content";s:187:"<div id="footer">
+1460107943s:527:"a:6:{s:5:"mtime";i:1459767198;s:7:"content";s:187:"<div id="footer">
     <div class="container">
         <hr />
         <p class="muted credit">&copy; 2013 - {{ "now"|date("Y") }} Alexey Bobkov &amp; Samuel Georges.</p>

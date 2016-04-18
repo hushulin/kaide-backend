@@ -1,0 +1,38 @@
+//
+@import "../vendor/bootstrap/less/variables.less";
+@import "../vendor/bootstrap/less/mixins.less";
+
+
+// Reset and dependencies
+@import "../vendor/bootstrap/less/normalize.less";
+@import "../vendor/bootstrap/less/print.less";
+@import "../vendor/bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "../vendor/bootstrap/less/scaffolding.less";
+@import "../vendor/bootstrap/less/type.less";
+@import "../vendor/bootstrap/less/code.less";
+@import "../vendor/bootstrap/less/grid.less";
+@import "../vendor/bootstrap/less/tables.less";
+@import "../vendor/bootstrap/less/forms.less";
+@import "../vendor/bootstrap/less/buttons.less";
+
+@import "../vendor/bootstrap/less/utilities.less";
+@import "../vendor/bootstrap/less/responsive-utilities.less";
+
+// Variables
+@link-color:       @brand-warning;
+@link-hover-color: darken(@link-color, -25%);
+
+// Usage
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
+}
+@body-bg:#000;
+@text-color:#fff;
