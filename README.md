@@ -23,7 +23,7 @@ October CMS has a few system requirements:
 As of PHP 5.5, some OS distributions may require you to manually install the PHP JSON extension.
 When using Ubuntu, this can be done via ``apt-get install php5-json``.
 
-
+```````````````````````````````````````````````````````````````````````````````````````````````
 <div class="toolbar-item" data-calculate-width>
         <ul>
             <li class="icon preview with-tooltip">
@@ -174,3 +174,4 @@ When using Ubuntu, this can be done via ``apt-get install php5-json``.
         </ul>
     </div>
 </nav>
+``````````````````````````````````````````````````````````````````````````````````````````````````````````````````
