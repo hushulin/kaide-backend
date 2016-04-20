@@ -1,4 +1,4 @@
-1460973920s:1070:"a:6:{s:5:"mtime";i:1460109576;s:7:"content";s:446:"title = "开德水表"
+1461163504s:1278:"a:6:{s:5:"mtime";i:1461048333;s:7:"content";s:550:"title = "开德水表"
 url = "/"
 is_hidden = 0
 ==
@@ -16,9 +16,10 @@ is_hidden = 0
 <div>
 <p>kaide meter system.version:1.0.0</p>
 <p>kaide api : <a href="http://120.76.137.219/apidocs/api.html">http://120.76.137.219/apidocs/api.html</a></p>
+<p>kaide backend : <a href="http://120.76.137.219:81/backend">http://120.76.137.219:81/backend</a></p>
 </div>
 </body>
-</html>";s:7:"viewBag";a:0:{}s:8:"settings";a:4:{s:5:"title";s:12:"开德水表";s:3:"url";s:1:"/";s:9:"is_hidden";s:1:"0";s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:396:"<!doctype html>
+</html>";s:7:"viewBag";a:0:{}s:8:"settings";a:4:{s:5:"title";s:12:"开德水表";s:3:"url";s:1:"/";s:9:"is_hidden";s:1:"0";s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:500:"<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -32,6 +33,7 @@ is_hidden = 0
 <div>
 <p>kaide meter system.version:1.0.0</p>
 <p>kaide api : <a href="http://120.76.137.219/apidocs/api.html">http://120.76.137.219/apidocs/api.html</a></p>
+<p>kaide backend : <a href="http://120.76.137.219:81/backend">http://120.76.137.219:81/backend</a></p>
 </div>
 </body>
 </html>";}";
