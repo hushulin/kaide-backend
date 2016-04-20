@@ -2,6 +2,7 @@
 url = "/"
 is_hidden = 0
 ==
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,4 +37,38 @@ is_hidden = 0
 <p>kaide backend : <a href="http://120.76.137.219:81/backend">http://120.76.137.219:81/backend</a></p>
 </div>
 </body>
+=======
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<link href="{{ [
+            'assets/less/theme-kaide.less'
+        ]|theme }}" rel="stylesheet">
+</head>
+<body>
+
+<div>
+<p>kaide meter system.version:1.0.0</p>
+<p>kaide api : <a href="http://120.76.137.219/apidocs/api.html">http://120.76.137.219/apidocs/api.html</a></p>
+</div>
+</body>
+</html>";s:7:"viewBag";a:0:{}s:8:"settings";a:4:{s:5:"title";s:12:"开德水表";s:3:"url";s:1:"/";s:9:"is_hidden";s:1:"0";s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:396:"<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<link href="{{ [
+            'assets/less/theme-kaide.less'
+        ]|theme }}" rel="stylesheet">
+</head>
+<body>
+
+<div>
+<p>kaide meter system.version:1.0.0</p>
+<p>kaide api : <a href="http://120.76.137.219/apidocs/api.html">http://120.76.137.219/apidocs/api.html</a></p>
+</div>
+</body>
+>>>>>>> 5631bca0572e440504e75b50d56523986fc45885
 </html>";}";
