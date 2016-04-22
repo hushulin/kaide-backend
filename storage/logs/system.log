@@ -4454,3 +4454,39 @@ Stack trace:
 #41 /var/www/kaide-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(84): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #42 /var/www/kaide-backend/index.php(44): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #43 {main}  
+[2016-04-20 15:16:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-21 00:36:50] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-21 07:37:29] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-21 07:37:36] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-21 07:37:49] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-21 11:27:26] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-22 01:03:56] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-22 01:03:56] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-22 01:04:05] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-22 01:04:06] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-22 01:04:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
+[2016-04-22 01:35:01] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in /var/www/kaide-backend/storage/cms/cache/11/79/index.htm.php:4
+Stack trace:
+#0 {main}  
