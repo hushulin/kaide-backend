@@ -76,6 +76,13 @@ class Plugin extends PluginBase
                         'permissions' => ['hushulin.kaide.*'],
                         'order' => 601,
                     ],
+                    'meter' => [
+                        'label' => '通知',
+                        'url' => Backend::url('hushulin/kaide/meter'),
+                        'icon' => 'icon-tint',
+                        'permissions' => ['hushulin.kaide.*'],
+                        'order' => 701,
+                    ],
                 ],
             ],
         ];
