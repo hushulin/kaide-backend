@@ -13,7 +13,8 @@ columns:
         searchable: true
     user_id:
         label: 绑定状态
-        type: text
+        type: partial
+        path: ~/plugins/hushulin/kaide/models/meter/_user_id_column.htm
     status:
         label: 水表状态
         type: text

@@ -77,7 +77,7 @@ class Plugin extends PluginBase
                         'order' => 601,
                     ],
                     'meter' => [
-                        'label' => '通知',
+                        'label' => '水表',
                         'url' => Backend::url('hushulin/kaide/meter'),
                         'icon' => 'icon-tint',
                         'permissions' => ['hushulin.kaide.*'],
