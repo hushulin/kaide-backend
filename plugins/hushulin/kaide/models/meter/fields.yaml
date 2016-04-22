@@ -1,8 +1,25 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
 fields:
     id:
         label: ID
+        span: full
         disabled: true
+        type: text
+    meter_number:
+        label: 水表号
+        span: auto
+        type: text
+    meter_md5:
+        label: 水表的MD5
+        span: auto
+        type: text
+    user_id:
+        label: 水表绑定状态
+        span: auto
+        default: 0
+        disabled: 1
+        type: switch
+    status:
+        label: 水表开启或关闭
+        span: auto
+        default: 1
+        type: switch

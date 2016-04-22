@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Meter
+
+# Model Form Field configuration
+form: $/hushulin/kaide/models/meter/fields.yaml
+
+# Model Class name
+modelClass: Hushulin\Kaide\Models\Meter
+
+# Default redirect location
+defaultRedirect: hushulin/kaide/meter
+
+# Create page
+create:
+    title: Create Meter
+    redirect: hushulin/kaide/meter/update/:id
+    redirectClose: hushulin/kaide/meter
+
+# Update page
+update:
+    title: Edit Meter
+    redirect: hushulin/kaide/meter
+    redirectClose: hushulin/kaide/meter
+
+# Preview page
+preview:
+    title: Preview Meter

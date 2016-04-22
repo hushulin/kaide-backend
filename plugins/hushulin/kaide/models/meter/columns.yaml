@@ -1,8 +1,19 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: text
         searchable: true
+    meter_number:
+        label: 水表号
+        type: text
+        searchable: true
+    meter_md5:
+        label: 水表MD5
+        type: text
+        searchable: true
+    user_id:
+        label: 绑定状态
+        type: text
+    status:
+        label: 水表状态
+        type: text
