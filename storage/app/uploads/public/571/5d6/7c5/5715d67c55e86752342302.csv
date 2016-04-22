@@ -1,0 +1,439 @@
+Title,Content,Categories
+"New Work Basement","## 新的服务机环境
+### 安装软件
+1. 安装nginx
+2. 安装python
+3. 安装php
+4. 安装mysql
+5. 安装Flask
+6. 安装October
+7. 安装git
+
+### 运行端口
+1. 80 nginx默认页
+2. 81 python uwsgi
+3. 82 php october
+4. 3306 mysql",
+"uwsgi 配置","```
+[uwsgi]
+socket=127.0.0.1:9090
+processes=4
+threads=2
+master=true
+pythonpath=/usr/share/nginx/html
+module=collection
+callable=app
+memory-report=true
+logto=/var/log/collection.log
+vhost=true
+```
+>  在一台服务器下配置多主机时,一定要设置vhost=true
+
+> socket可以设置成unix套接流,两者性能貌似没什么差异","Python Web相关"
+周末,"# 这是个愉快的周末
+
+
+---
+
+
+![`52O_KTE}42}AYZP7_1IPMO.png](/storage/app/uploads/public/565/afa/7ad/565afa7adb4b0064221809.png)",
+"DEDE CMS NOTE","# 目录结构
+*根目录    
+/dede    管理后台目录 
+/freelist    自由文档列表生成目录 
+/html    默认文章生成目录 
+/include    程序核心文件目录 
+/member    会员管理目录 
+/plus    插件及辅助功能目录 
+/setup    安装目录 
+/special    专题生成目录 
+/templets    默认模板存放目录 
+/upimg    上传下载文件保存目录 
+base.css    基本样式表 
+index.php    网站默认首页 
+robots.txt    搜索控制文件 
+    
+/templets模板目录    
+/dedecmsv31    3模板目录 
+/default    默认模板目录 
+article_article.htm    普通文章页面模板 
+article_default.htm    一般文档页面模板 
+article_flash.htm    flash页面模板 
+article_image.htm    图集页面模板 
+article_soft.htm    软件页面模板 
+article_spec.htm    专题页面模板 
+index.htm    网站首页模板 
+index_article.htm    文章频道封面模板 
+index_article_webart1.htm    
+index_article_webart2.htm    
+index_article_webart.htm    
+index_default.htm    一般文档封面模板 
+index_flash.htm    flash频道封面模板 
+index_image.htm    图集频道封面模板 
+index_soft.htm    软件频道封面模板 
+list_article.htm    文章列表模板 
+list_default.htm    一般文档列表目录模板 
+list_flash.htm    flash文档列表模板 
+list_free.htm    自由列表模板 
+list_image.htm    图集列表模板 
+list_soft.htm    软件列表模板 
+list_spec.htm    专题列表模板 
+/img    模板图片目录（含样式表） 
+/plus    辅助插件模板目录 
+download_links_templet.htm    下载链接模板 
+feedback_confirm.htm    评论确认模板 
+feedback_templet.htm    用户评论模板 
+feedback_templet_js.htm    
+flink-add.htm    友情链接添加模板 
+flink-list.htm    友情链接列表模板 
+guestbook.htm    留言本模板 
+heightsearch.htm    高级搜索模板 
+js.htm    
+recommend.htm    推荐好友模板 
+rss.htm    RSS的XML模板 
+rssmap.htm    RSS订阅文件 
+showphoto.htm    图片显示模板 
+sitemap.htm    网站地图模板 
+view_msg.htm    会员提示信息模板 
+vote.htm    投票结果显示模板 
+/system    系统模板目录 
+channel_list.htm    栏目列表系统模板 
+list_fulllist.htm    文档列表系统模板 
+mynews.htm    站内新闻系统模板 
+part_arclist.htm    文章列表系统模板 
+part_autochannel.htm    分类栏目系统模板 
+part_channelartlist.htm    包含文章列表的栏目系统模板 
+part_imginfolist.htm    使用imginfolist标签调用的模板 
+part_imglist.htm    使用imglist标签调用的模板 
+part_type_list.htm    单个栏目的系统模板 
+spec_arclist.htm    专题列表文章系统模板 
+spec_list.htm    专题用模板 
+tag_arclist.htm    
+tag_fieldlist.htm    fieldlist用系统模板 
+/system/channel    频道特殊底层模板目录 
+channel_downlinkpage.htm    下载地址列表链接模板 
+channel_downlinks.htm    下载地址列表模板 
+channel_spec_note.htm    专题节点列表模板 
+    
+/include目录  程序核心目录    
+config_base.php    环境定义文件。用于检测系统环境，定义工作目录，保存数据库链接信息，引入常用函数等，建议不要修改。 
+config_hand.php    系统配置文件。定义系统常用的配置信息定义，可从后台管理直接生成该文件。 
+config_passport.php    通行证文件 
+config_rglobals.php    检测系统外部变量 
+config_rglobals_magic.php    同上 
+inc_archives_view.php    用于浏览文档或对文档生成HTML 
+inc_arclist_view.php    用于浏览频道列表或对内容列表生成HTML 
+inc_arcmember_view.php    用于浏览会员发布的文档 
+inc_arcpart_view.php    用于解析和创建全局性质的模板，如频道封面，主页，单个页面等 
+inc_arcsearch_view.php    用于文档搜索 
+inc_arcspec_view.php    用于浏览所有专题列表或对专题列表生成HTML 
+inc_channel_unit.php    用户解析特定频道的附加数据结构信息 
+inc_channel_unit_functions.php    系统共用函数集合 
+inc_downclass.php    防采集随机字符串函数 
+inc_freelist_view.php    用于对特定内容列表生成HTML 
+inc_functions.php    可供用户使用的函数集合 
+inc_imgbt.php    GetTypeidSelMember 
+inc_memberlogin.php    用于用户登录及获得会员状态 
+inc_photograph.php    用于处理系统中的图片，例如水印，缩略图等 
+inc_photowatermark_config.php    图片处理参数定义 
+inc_rss_view.php    用于浏览频道RSS或对RSS生成静态文件 
+inc_separate_functions.php    SpGetArcList函数，用于获得文档列表 
+inc_sitemap.php    用于生成网站地图 
+inc_type_tree.php    用于选择栏目的目录树 
+inc_type_tree_member.php    同上，会员使用 
+inc_typelink.php    用于显示文章的位置和栏目位置等 
+inc_typeunit_admin.php    用于频道管理时的一些复杂操作，主要用于后台 
+inc_typeunit_menu.php    同上 
+inc_userlogin.php    用于管理员登录 
+inc_vote.php    用于管理投票 
+jump.php    用于超链接跳转 
+pub_charset.php    共用字符处理函数，GB/UTF-8/Unicode/BIG5等互换 
+pub_collection.php    用于采集 
+pub_collection_functions.php    采集用函数 
+pub_datalist.php    后台管理用数据列表 
+pub_datalist_dm.php    同上，不使用模板 
+pub_db_mysql.php    用于操作数据库 
+pub_dedehtml2.php    用于采集中的HTML解析 
+pub_dedehtml.php    HTML解析器 
+pub_dedetag.php    用于dede模板标签解析 
+pub_httpdown.php    用于下载http中的资源 
+pub_oxwindow.php    后台程序扩展 
+pub_splitword_www.php    织梦分词算法 
+validateimg.php    验证码 
+vdimgck.php    验证码 
+/inc    共用函数目录 
+inc_fun_funAdmin.php    获取拼音码等函数 
+inc_fun_funString.php    html代码处理等函数 
+inc_fun_SpGetArcList.php    获取文档列表SpGetArcList",
+Export,"```
+/export/pwd1877408/items.xls
+```
+> 数据导出出口,python flask完成,目前数据量过大,导致超时,这里需要修改了",
+maple源码分析,"# 简介
+>  2个epoll_fd，分别对应 外网链接 和 内网链接（之前也考虑过将accept线程单独放出来，后来发现会导致复杂度升高）分别处于单独的线程内，这样connection的申请和释放是不用加锁的。他们内部的沟通使用 加锁的queue。在每一次循环结束后进行pop和push。并通过notify()通知epoll退出等待，进行处理而每个线程内部，有一个临时queue，只有在epoll每循环一次之后，才会复制进去，这样就可以尽量避免锁了用队列的原因是，因为worker的连接没有办法和gateway完全同步，所以这个时候需要有队列暂时存储.内网连接里面分worker和trigger，worker是可以接受任务和返回消息的，而trigger只能返回消息。
+
+
+![http://211.149.221.118:82/storage/app/media/img/ooo.png](http://211.149.221.118:82/storage/app/media/img/ooo.png)",C++重拾
+计划要做的事,"**2016年年度计划**
+1. 离职,找一个新环境
+2. 做一个轻论坛,叫长沙程序员工会
+3. 做一个业余的业主装修交流圈,提供真诚服务,非盈利
+4. 把Laravel高级技术订阅号重新维护起来,帮助PHP程序员们
+5. 学习Django,会用,好吹牛逼
+6. 不受语言约束,认真思考算法与设计给效率带来的提升
+7. 继续学习octobercms
+8. 找到简历或者重新做一份
+
+
+---
+**2016年年度计划完成情况**
+1. 已经签字
+2. 未开始
+3. 已经建群
+4. 已经关注
+5. 初步了解
+6. 未开始
+7. 未开始
+8. 未开始",计划&备忘
+mysql按周统计,"> 应用场景:一个采集程序,会不间断的采集数据,存入mysql中,并记录入库时间.那么,当我需要知道每天采集的数量分布图时,可以采用这条sql查出,并且输出到echarts里做分析.
+
+
+---
+
+
+```
+SELECT DATE_FORMAT(date,'%Y%m%d') d , COUNT(*) c FROM col_visite_data GROUP BY d ORDER BY d DESC;
+```
+
+
+---
+
+```
+PS:最后ID 62790
+```
+http://211.149.221.118:81/m/27
+http://211.149.221.118:81/m/1
+---
+
+
+![QQ截图20160218100328.png](/storage/app/uploads/public/56c/526/873/56c52687375b0002479986.png)
+
+---
+DATE_FORMAT(date,format)
+
+根据format字符串格式化date值。下列修饰符可以被用在format字符串中：
+
+%M 月名字(January……December)
+
+%W 星期名字(Sunday……Saturday)
+
+%D 有英语前缀的月份的日期(1st, 2nd, 3rd, 等等。）
+
+%Y 年, 数字, 4 位
+
+%y 年, 数字, 2 位
+
+%a 缩写的星期名字(Sun……Sat)
+
+%d 月份中的天数, 数字(00……31)
+
+%e 月份中的天数, 数字(0……31)
+
+%m 月, 数字(01……12)
+
+%c 月, 数字(1……12)
+
+%b 缩写的月份名字(Jan……Dec)
+
+%j 一年中的天数(001……366)
+
+%H 小时(00……23)
+
+%k 小时(0……23)
+
+%h 小时(01……12)
+
+%I 小时(01……12)
+
+%l 小时(1……12)
+
+%i 分钟, 数字(00……59)
+
+%r 时间,12 小时(hh:mm:ss [AP]M)
+
+%T 时间,24 小时(hh:mm:ss)
+
+%S 秒(00……59)
+
+%s 秒(00……59)
+
+%p AM或PM
+
+%w 一个星期中的天数(0=Sunday ……6=Saturday ）
+
+%U 星期(0……52), 这里星期天是星期的第一天
+
+%u 星期(0……52), 这里星期一是星期的第一天
+
+%% 一个文字“%”",SQL
+商城需要的组件,"> 换了工作环境,同时工作内容发生了一些变化,主要做商城,由于要手写商城,不是基于二次开发框架开发,所以有必要做一些相关领域的功课.特意经过思考,记录一些该用到的组件.
+
+*商城开发基于laravel框架,利用october做基石,同时需要必须的组件,才能构成基本商城.*
+
+1. 商品
+* Octoshop
+* Octoshop Lite
+
+2. 类目
+* Octoshop
+
+3. 订单
+* Octoshop
+
+4. 购物车
+* OctoCart
+
+5. 支付
+6. 会员
+7. 商家
+8. 分销",新的工作
+构建一个简单的招聘网站,"# 计划
+> 使用oc构建
+**************************
+
+# 功能
+> 求职者模型
+**************************
+> 招聘者模型
+**************************
+> 简历系统
+1. 求职者
+    * 多个简历
+    * 关键字
+    * 推广
+    * 帮助
+    * 身份证
+    * 学历
+    * 经验
+    * 擅长
+    ******************
+2. 企业的
+    * 热搜
+    * 置顶
+    * 刷新
+    * 认证
+    * 管理
+    * 简历库
+    * 关键字
+    ******************
+3. 投递
+4. 进度
+5. 状态
+6. 线上
+
+## 招聘领域内的门户概念
+*做成门户,论坛，ＩＭ，博客，每天滚动的资讯*
+
+
+# 组件",计划&备忘
+"Redis Cache Session","# 简介
+>能够更好的使用缓存，在TP原来的缓存驱动体系下扩展了Predis，Predis比phpredis更好的进行扩展，因为它是采用php编写，而phpredis以C扩展的形式加入php，需要编译安装。目前两种驱动方式都已加入TP框架，在实际项目中可以随时更换驱动方式。
+
+# 安装
+>采用composer安装包方式安装
+1. 安装composer`curl -sS https://getcomposer.org/installer | php` 
+2. 项目根目录执行`composer require predis/predis` 
+3. 在入口文件index.php 里加入`require './vendor/autoload.php';` 
+4. 修改配置文件tags.php 加入行为扩展
+5. 修改配置文件config.php `DATA_CACHE_TYPE` 选择合适的缓存驱动
+
+>通过安装后，TP将默认你采用composer包管理方式，管理你的第三方包，同时，默认你采用服务容器的思想开发有关代码，注意事项：如果你想采用原有TP redis驱动缓存，请设置`DATA_CACHE_TYPE=Redis`,这必须你对php进行phpredis扩展，如果采用本驱动包，你只需要按照此安装过程操作，最后设置`DATA_CACHE_TYPE=Predis`,即可开箱即用。（项目中，1，2，3可能已经操作完，请根据实际情况操作）
+
+# 快速开始
+>常用场景有： 
+* 页面缓存(静态缓存)
+* 说明：页面缓存是缓存页面成静态序列化数据。伪代码表示：
+* `if(!($result = S('page_name'))){`
+`//todo 重新生成数据`
+`$result = fetch_contents();`
+`S('page_name' , 10 , $result);`
+`}`
+`return $result;`
+* 查询缓存
+* 说明：查询缓存主要在模型中应用，具体看TP文档，关键方法为`cache()`，提供链式操作。
+* SQL语句缓存
+* 说明:SQL语句缓存是因为TP ORM 机制，所有SQL是动态生成，所以可以缓存SQL语句以提高效率。直接修改配置文件:
+* [SQL缓存](http://doc.thinkphp.cn/manual/sql_cache.html)
+
+# 高级
+>Predis 在session 方面也有应用，配置文件config.php `'SESSION_TYPE' => 'Predis'` 就可以把会话信息以redis方式存储。",新的工作
+"Dev Example","# 开始
+>本文基于现有框架（IOC , DI , FACADE over TP）下提供一个简单服务的开发范式，
+这里以引入http请求服务为例。
+
+# 准备
+>这里我们不准备重新造个轮子，依赖强大的composer 包管理器，在[https://packagist.org/](https://packagist.org/) 上找到 `guzzlehttp/guzzle` 包，via `composer require guzzlehttp/guzzle` 安装
+
+# 开发
+1. 开发服务提供者
+
+>服务提供者引入了服务定位器模式:
+* 添加服务提供者文件 `touch App/Lib/Utils/classes/http.php` ，这里我在classes下添加了http.php 文件，当然，你可以在任何一个已经被load进来的文件夹添加。注：classes 已经在composer.json 里预先加载进来了
+* 在 `http.php` 里定义类并实现register接口，具体参看http.php
+* 在配置文件里的`PROVIDERS`添加`Http`服务提供者
+* 如果想使用Facade 则需要建立别名文件` touch App/Lib/Utils/facades/http.php` 并且实现getFacadeAccessor接口
+* 在配置文件里添加`ALIAS` http 别名
+
+2. 开发自定义的代码库
+* 暂时没有需求
+
+# 使用
+`Http::request('GET' , 'https://api.github.com/user' , array('auth'=>array('username' , 'password')));`
+echo $res->getStatusCode();
+// 200
+echo $res->getHeaderLine('content-type');
+// 'application/json; charset=utf8'
+echo $res->getBody();
+
+$request = Http::get('http://www.ojuju.com', array('auth'=>array('hushulin12321@126.com' , 'hushulin100')), array('timeout' => 10));
+$response = $request->send();
+echo $response->getBody();
+对于response 应该看看这个(http://blog.pfan.cn/lym51/40223.html)[http://blog.pfan.cn/lym51/40223.html]",新的工作
+"IOC DI","# 初识IOC，DI，外观
+>[点这里进行初识](http://my.oschina.net/cxz001/blog/227482)
+
+# 背景
+>现有TP模式下，无法实现真正意义上的模块化编程，依赖关系管理缺陷，程序的可插拔，可扩展有限。
+
+# 术语
+1. IOC 控制反转
+2. DI 依赖注入
+3. Container 容器
+4. Service Located 服务定位
+5. Facade 门面模式
+
+# 安装
+1. 安装Auryn\Injector `composer require rdlowrey/auryn` 
+2. 加入app_init行为 `IocContainerProviderBehavior` 
+3. 加入app_init行为 `FacadeProviderBehavior` 
+4. 开始DI之旅
+
+# 安装后的效果以及守则
+>安装好后，你马上看到的效果是，有新的文件产生，或者说是手动开发的代码：
+1. Lib/Utils/ioc.php 维护依赖关系（非必要情况下不需要编写代码）
+2. Lib/Utils/facade.php 门面模式的基类 
+3. Lib/Utils/facades 门面模式实现类文件夹
+
+# 快速开始
+>REDIS服务为例子：`Redis::set($name , $value);` 
+
+# 总结
+>参看开发范例.md
+
+# 当项目越来越大，还有什么思路？（高级）
+* 服务绑定
+* 服务上下文判断解析
+* 服务标签
+
+# 试图开发新的代码
+>参看开发范例.md",新的工作
