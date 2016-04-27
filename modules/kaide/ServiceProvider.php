@@ -10,6 +10,7 @@ use App;
 
 class ServiceProvider extends ModuleServiceProvider {
     public function register() {
+        parent::register('kaide');
         App::singleton('kaide.sock', function () {
 
             return new Client('127.0.0.1', 8089, new IP4() , new Stream() , new TCP() , new EventDispatcher());
