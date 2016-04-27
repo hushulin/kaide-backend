@@ -1,0 +1,30 @@
+{
+    "name": "eric/kaide",
+    "type": "october-module",
+    "description": "Kaide module for October CMS",
+    "homepage": "http://octobercms.com",
+    "keywords": ["october cms", "october", "kaide"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Hu",
+            "email": "hushulin12321@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0",
+        "october/rain": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kaide\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
