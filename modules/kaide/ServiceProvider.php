@@ -6,6 +6,7 @@ use Aysheka\Socket\Client\Client;
 use Aysheka\Socket\Address\IP4;
 use Aysheka\Socket\Type\Stream;
 use Aysheka\Socket\Transport\TCP;
+use App;
 
 class ServiceProvider extends ModuleServiceProvider {
     public function register() {
