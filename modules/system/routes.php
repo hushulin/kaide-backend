@@ -9,3 +9,14 @@ App::before(function ($request) {
      */
     Route::any('combine/{file}', 'System\Classes\Controller@combine');
 });
+
+
+Route::get('/sock' , function(){
+	$sock = App::make('kaide.sock')->connect();
+
+	$read = $sock->read();
+
+	var_dump($read);
+
+	var_dump($sock);
+});
