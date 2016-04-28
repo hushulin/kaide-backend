@@ -45,8 +45,8 @@ class KaideServer extends Command {
 
 
         $eventDispatcher->addListener(ReadEvent::getEventName() , function (ReadEvent $event) {
-            echo "Read: " . trim($event->getData()) . "\n";
-            Log::info("!KAIDE:Read: " . trim($event->getData()) . "\n");
+            // echo "Read: " . trim($event->getData()) . "\n";
+            // Log::info("!KAIDE:Read: " . trim($event->getData()) . "\n");
 
             $buffer = $event->getData();
 
