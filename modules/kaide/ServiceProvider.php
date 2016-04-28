@@ -13,7 +13,7 @@ class ServiceProvider extends ModuleServiceProvider {
         parent::register('kaide');
         App::singleton('kaide.sock', function () {
 
-            return new Client('127.0.0.1', 8089, new IP4() , new Stream() , new TCP() , new EventDispatcher());
+            return new Client('127.0.0.1', 80, new IP4() , new Stream() , new TCP() , new EventDispatcher());
         });
     }
 }
