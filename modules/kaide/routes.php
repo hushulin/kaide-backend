@@ -6,9 +6,6 @@ Route::get('/sock' , function(){
 
 	var_dump($sock->connect());
 
-	die();
-
-
 	$read = $sock->read();
 
 	var_dump($read);
