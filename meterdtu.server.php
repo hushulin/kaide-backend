@@ -15,7 +15,6 @@ $eventDispatcher = new EventDispatcher();
 $eventDispatcher->addListener(NewConnectionEvent::getEventName() , function (NewConnectionEvent $event) {
     $socket = $event->getSocket();
     $socket->write("HELLO I'm test server\n");
-    // Read bytes from socket if available
 
     while ($read = $socket->read()) {
         echo "Read data: [{$read}]";
