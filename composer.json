@@ -37,13 +37,6 @@
         "phpunit/phpunit": "~4.0",
         "phpunit/phpunit-selenium": ">=1.2"
     },
-    "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php",
-            "tests/UiTestCase.php",
-            "tests/PluginTestCase.php"
-        ]
-    },
     "scripts": {
         "post-create-project-cmd": [
             "php artisan key:generate"
