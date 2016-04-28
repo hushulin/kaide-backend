@@ -82,6 +82,7 @@ class KaideServer extends Command {
 
             for ($i=0; $i < strlen($buffer); $i++) {
                 $ascii .= bin2hex($buffer{$i}) . "  ";
+                Log::info($buffer{$i});
             }
 
             Log::info($ascii);
