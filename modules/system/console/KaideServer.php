@@ -42,11 +42,11 @@ class KaideServer extends Command {
 
         $eventDispatcher->addListener(NewConnectionEvent::getEventName() , function (NewConnectionEvent $event) {
             $socket = $event->getSocket();
-            $socket->write("HELLO I'm test server\n");
+            $socket->write("HELLO I'm test server\n\n");
 
             while ($read = $socket->read()) {
-                echo "Read data: [{$read}]";
-                $socket->write('Response');
+                echo "Read data: [{$read}]\n";
+                $socket->write("Response\n\n");
                 usleep(50);
             }
         });
