@@ -43,17 +43,53 @@ class KaideServer extends Command {
 
         $eventDispatcher = new EventDispatcher();
 
+        $eventDispatcher->addListener(NewConnectionEvent::getEventName(), function (NewConnectionEvent $event) {
 
-        $eventDispatcher->addListener(ReadEvent::getEventName() , function (ReadEvent $event) {
-            // echo "Read: " . trim($event->getData()) . "\n";
-            // Log::info("!KAIDE:Read: " . trim($event->getData()) . "\n");
+            $socket = $event->getSocket();
+
+            $socket->write("HELLO I'm test server\n");
+
+            // Read bytes from socket if available
+            while ($read = $socket->read()) {
+                echo "Read data: [{$read}]";
+                $socket->write('Response');
+                usleep(50);
+            }
+        });
+
+        $eventDispatcher->addListener(OpenEvent::getEventName(), function (OpenEvent $event) {
+            echo "Open\n";
+        });
+
+        $eventDispatcher->addListener(CloseEvent::getEventName(), function (CloseEvent $event) {
+            echo "Close\n";
+        });
+
+        $eventDispatcher->addListener(ConnectEvent::getEventName(), function (ConnectEvent $event) {
+            echo "Connect\n";
+        });
+
+        $eventDispatcher->addListener(BindEvent::getEventName(), function (BindEvent $event) {
+            echo "Bind\n";
+        });
+
+        $eventDispatcher->addListener(ReadEvent::getEventName(), function (ReadEvent $event) {
+            echo "Read: " . trim($event->getData()) . "\n";
 
             $buffer = $event->getData();
 
+            $ascii = "";
+
             for ($i=0; $i < strlen($buffer); $i++) {
-                Log::info(ord($buffer{$i}));
+                $ascii .= ord($buffer{$i});
             }
 
+            Log::info($ascii);
+
+        });
+
+        $eventDispatcher->addListener(WriteEvent::getEventName(), function (WriteEvent $event) {
+            echo "Write: " . trim($event->getData()) . "\n";
         });
 
         $server = new \Aysheka\Socket\Server\Server('0.0.0.0', 8089, new \Aysheka\Socket\Address\IP4() , new Type\Stream() , new \Aysheka\Socket\Transport\TCP() , $eventDispatcher);
