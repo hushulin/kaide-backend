@@ -15,6 +15,7 @@ use Aysheka\Socket\Client\Event\ConnectEvent;
 use Aysheka\Socket\Server\Event\BindEvent;
 use Aysheka\Socket\Event\IO\ReadEvent;
 use Aysheka\Socket\Event\IO\WriteEvent;
+use Log;
 
 class KaideServer extends Command {
     /**
@@ -38,15 +39,25 @@ class KaideServer extends Command {
 
         $this->output->writeln('<info>Kaide server starting ... </info>');
 
+        Log::info('!KAIDE:Kaide server starting ...');
+
         $eventDispatcher = new EventDispatcher();
 
         $eventDispatcher->addListener(NewConnectionEvent::getEventName() , function (NewConnectionEvent $event) {
             $socket = $event->getSocket();
             $socket->write("HELLO I'm test server\n\n");
 
+            Log::info("%KAIDE:HELLO I'm test server\n\n");
+
             while ($read = $socket->read()) {
                 echo "Read data: [{$read}]\n";
+
+                Log::info("!KAIDE:Read data: [{$read}]\n");
+
                 $socket->write("Response\n\n");
+
+                Log::info("%KAIDE:Response\n\n");
+
                 usleep(50);
             }
         });
@@ -64,9 +75,11 @@ class KaideServer extends Command {
         });
         $eventDispatcher->addListener(ReadEvent::getEventName() , function (ReadEvent $event) {
             echo "Read: " . trim($event->getData()) . "\n";
+            Log::info("!KAIDE:Read: " . trim($event->getData()) . "\n");
         });
         $eventDispatcher->addListener(WriteEvent::getEventName() , function (WriteEvent $event) {
             echo "Write: " . trim($event->getData()) . "\n";
+            Log::info("!KAIDE:Write: " . trim($event->getData()) . "\n");
         });
         $server = new \Aysheka\Socket\Server\Server('0.0.0.0', 8089, new \Aysheka\Socket\Address\IP4() , new Type\Stream() , new \Aysheka\Socket\Transport\TCP() , $eventDispatcher);
         $server->create(true);
