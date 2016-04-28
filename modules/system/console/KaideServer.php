@@ -43,46 +43,58 @@ class KaideServer extends Command {
 
         $eventDispatcher = new EventDispatcher();
 
-        $eventDispatcher->addListener(NewConnectionEvent::getEventName() , function (NewConnectionEvent $event) {
-            $socket = $event->getSocket();
-            $socket->write("HELLO I'm test server\n\n");
+        // $eventDispatcher->addListener(NewConnectionEvent::getEventName() , function (NewConnectionEvent $event) {
+        //     $socket = $event->getSocket();
+        //     $socket->write("HELLO I'm test server\n\n");
 
-            Log::info("%KAIDE:HELLO I'm test server\n\n");
+        //     Log::info("%KAIDE:HELLO I'm test server\n\n");
 
-            while ($read = $socket->read()) {
-                echo "Read data: [{$read}]\n";
+        //     while ($read = $socket->read()) {
+        //         echo "Read data: [{$read}]\n";
 
-                Log::info("!KAIDE:Read data: [{$read}]\n");
+        //         Log::info("!KAIDE:Read data: [{$read}]\n");
 
-                $socket->write("Response\n\n");
+        //         $socket->write("Response\n\n");
 
-                Log::info("%KAIDE:Response\n\n");
+        //         Log::info("%KAIDE:Response\n\n");
 
-                usleep(50);
-            }
-        });
-        $eventDispatcher->addListener(OpenEvent::getEventName() , function (OpenEvent $event) {
-            echo "Open\n";
-        });
-        $eventDispatcher->addListener(CloseEvent::getEventName() , function (CloseEvent $event) {
-            echo "Close\n";
-        });
-        $eventDispatcher->addListener(ConnectEvent::getEventName() , function (ConnectEvent $event) {
-            echo "Connect\n";
-        });
-        $eventDispatcher->addListener(BindEvent::getEventName() , function (BindEvent $event) {
-            echo "Bind\n";
-        });
+        //         usleep(50);
+        //     }
+        // });
+        // $eventDispatcher->addListener(OpenEvent::getEventName() , function (OpenEvent $event) {
+        //     echo "Open\n";
+        // });
+        // $eventDispatcher->addListener(CloseEvent::getEventName() , function (CloseEvent $event) {
+        //     echo "Close\n";
+        // });
+        // $eventDispatcher->addListener(ConnectEvent::getEventName() , function (ConnectEvent $event) {
+        //     echo "Connect\n";
+        // });
+        // $eventDispatcher->addListener(BindEvent::getEventName() , function (BindEvent $event) {
+        //     echo "Bind\n";
+        // });
+
         $eventDispatcher->addListener(ReadEvent::getEventName() , function (ReadEvent $event) {
             echo "Read: " . trim($event->getData()) . "\n";
             Log::info("!KAIDE:Read: " . trim($event->getData()) . "\n");
+
+            $buffer = $event->getData();
+
+            for ($i=0; $i < strlen($buffer); $i++) {
+                Log::info(ord($buffer{$i}));
+            }
+
         });
-        $eventDispatcher->addListener(WriteEvent::getEventName() , function (WriteEvent $event) {
-            echo "Write: " . trim($event->getData()) . "\n";
-            Log::info("!KAIDE:Write: " . trim($event->getData()) . "\n");
-        });
+
+        // $eventDispatcher->addListener(WriteEvent::getEventName() , function (WriteEvent $event) {
+        //     echo "Write: " . trim($event->getData()) . "\n";
+        //     Log::info("!KAIDE:Write: " . trim($event->getData()) . "\n");
+        // });
+
         $server = new \Aysheka\Socket\Server\Server('0.0.0.0', 8089, new \Aysheka\Socket\Address\IP4() , new Type\Stream() , new \Aysheka\Socket\Transport\TCP() , $eventDispatcher);
+
         $server->create(true);
+
     }
     /**
      * Get the console command arguments.
