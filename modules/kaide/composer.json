@@ -14,8 +14,7 @@
     "require": {
         "php": ">=5.4.0",
         "composer/installers": "~1.0",
-        "october/rain": "~1.0",
-        "aysheka/socket":"*"
+        "october/rain": "~1.0"
     },
     "autoload": {
         "psr-4": {
