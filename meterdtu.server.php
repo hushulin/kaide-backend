@@ -41,5 +41,5 @@ $eventDispatcher->addListener(ReadEvent::getEventName() , function (ReadEvent $e
 $eventDispatcher->addListener(WriteEvent::getEventName() , function (WriteEvent $event) {
     echo "Write: " . trim($event->getData()) . "\n";
 });
-$server = new \Aysheka\Socket\Server\Server('120.76.137.219', 8089, new \Aysheka\Socket\Address\IP4() , new Type\Stream() , new \Aysheka\Socket\Transport\TCP() , $eventDispatcher);
+$server = new \Aysheka\Socket\Server\Server('0.0.0.0', 8089, new \Aysheka\Socket\Address\IP4() , new Type\Stream() , new \Aysheka\Socket\Transport\TCP() , $eventDispatcher);
 $server->create(true);
