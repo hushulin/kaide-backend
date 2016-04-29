@@ -4,6 +4,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Log;
+use swoole_server;
 
 class KaideSwoole extends Command {
     /**
@@ -25,7 +26,7 @@ class KaideSwoole extends Command {
      */
     public function fire() {
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
-        $serv = new \swoole_server("0.0.0.0", 9501);
+        $serv = new swoole_server("0.0.0.0", 9501);
         $serv->set(array(
             'worker_num' => 8, //工作进程数量
             'daemonize' => true, //是否作为守护进程
