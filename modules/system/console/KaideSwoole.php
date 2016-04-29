@@ -70,6 +70,10 @@ class KaideSwoole extends Command {
                 Log::info("send:" . join(" " , $ascii));
             }
 
+            if ( '66' == $ascii[0] ) {
+            	$serv->send($fd , '66');
+            }
+
             $serv->close($fd);
         });
 
