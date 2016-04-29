@@ -25,23 +25,58 @@ class KaideSwoole extends Command {
      * Execute the console command.
      */
     public function fire() {
+
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
+
         $serv = new swoole_server("0.0.0.0", 9501);
+
         $serv->set(array(
             'worker_num' => 8, //工作进程数量
             'daemonize' => true, //是否作为守护进程
 
         ));
-        $serv->on('connect', function ($serv, $fd) {
-            echo "Client:Connect.\n";
-        });
+
+        // $serv->on('connect', function ($serv, $fd) {
+        //     echo "Client:Connect.\n";
+        // });
+
         $serv->on('receive', function ($serv, $fd, $from_id, $data) {
-            $serv->send($fd, 'Swoole: ' . $data);
+
+        	$ascii = array();
+
+            for ($i=0; $i < strlen($data); $i++) {
+                $ascii[] = bin2hex($data{$i});
+            }
+
+            Log::info("receive:" . join(" " , $ascii));
+
+            if ( '01' == $ascii[1] ) {
+
+                $ascii[1] = 81;
+
+                $ascii[3] = 10;
+
+                for ($i=15; $i <= 20; $i++) {
+                    unset($ascii[$i]);
+                }
+
+                $bin = array_reduce($ascii, function($v1 , $v2){
+                    return $v1 . hex2bin($v2);
+                });
+
+                $serv->send($fd , $bin);
+
+
+                Log::info("send:" . join(" " , $ascii));
+            }
+
             $serv->close($fd);
         });
-        $serv->on('close', function ($serv, $fd) {
-            echo "Client: Close.\n";
-        });
+
+        // $serv->on('close', function ($serv, $fd) {
+        //     echo "Client: Close.\n";
+        // });
+
         $serv->start();
     }
     /**
