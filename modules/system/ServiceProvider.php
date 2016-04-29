@@ -227,6 +227,7 @@ class ServiceProvider extends ModuleServiceProvider
         $this->registerConsoleCommand('theme.list', 'System\Console\ThemeList');
         $this->registerConsoleCommand('theme.use', 'System\Console\ThemeUse');
         $this->registerConsoleCommand('kaide.server', 'System\Console\KaideServer');
+        $this->registerConsoleCommand('kaide.swoole', 'System\Console\KaideSwoole');
     }
 
     /*
