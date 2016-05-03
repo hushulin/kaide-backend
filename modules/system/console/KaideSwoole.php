@@ -70,6 +70,25 @@ class KaideSwoole extends Command {
 
                 Log::info("send:" . join(" " , $ascii));
             }
+
+            if ( '01' == $ascii[1] ) {
+                $tmp = "7b 89 00 12 31 35 38 32 31 30 34 39 37 33 34 03 03 7b";
+                $arr_tmp = explode(" ", $tmp);
+                $bin_tmp = array_reduce($arr_tmp, function($v1 , $v2){
+                    return $v1 . hex2bin($v2);
+                });
+
+                $serv->send($fd , $bin_tmp);
+
+                Log::info("send:" . join(" " , $arr_tmp));
+            }
+
+
+
+
+
+
+
             //////////////////////////////////////////////////
             // This is a test send
             if ( '66' == $ascii[1] ) {
