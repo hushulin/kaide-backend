@@ -71,11 +71,14 @@ class KaideSwoole extends Command {
             }
 
             // This is a test send
-            if ( '66' == $ascii[0] ) {
+            if ( '66' == $ascii[1] ) {
             	$serv->send($fd , '66');
             }
 
-            $serv->close($fd);
+            //
+
+
+            // $serv->close($fd);
         });
 
         // $serv->on('close', function ($serv, $fd) {
