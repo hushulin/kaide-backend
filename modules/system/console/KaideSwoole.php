@@ -75,7 +75,15 @@ class KaideSwoole extends Command {
             	$serv->send($fd , '66');
             }
 
-            //
+            // This is a other test send
+            if ( '67' == $ascii[1] ) {
+                $serv->send($fd , '67');
+            }
+
+            // if receive an exit code , close the fd;
+            if ( 'exit' == $data ) {
+                $serv->close($fd);
+            }
 
 
             // $serv->close($fd);
