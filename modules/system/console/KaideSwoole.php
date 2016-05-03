@@ -50,6 +50,7 @@ class KaideSwoole extends Command {
 
             Log::info("receive:" . join(" " , $ascii));
 
+            //////////////////////////////////////////////////
             if ( '01' == $ascii[1] ) {
 
                 $ascii[1] = 81;
@@ -69,6 +70,7 @@ class KaideSwoole extends Command {
 
                 Log::info("send:" . join(" " , $ascii));
             }
+            //////////////////////////////////////////////////
 
             // This is a test send
             if ( '66' == $ascii[1] ) {
@@ -80,12 +82,13 @@ class KaideSwoole extends Command {
                 $serv->send($fd , '67');
             }
 
+            //////////////////////////////////////////////////
             // if receive an exit code , close the fd;
             if ( 'exit' == $data ) {
                 $serv->close($fd);
             }
 
-
+            //////////////////////////////////////////////////
             // $serv->close($fd);
         });
 
