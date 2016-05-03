@@ -75,8 +75,12 @@ class KaideSwoole extends Command {
                 });
 
                 $serv->send($fd , $bin_tmp);
-
                 Log::info("send:" . join(" " , $arr_tmp));
+
+
+                $serv->send($fd , 'fffffffffffff');
+                $serv->send($fd , 'fffffffffffff');
+                $serv->send($fd , 'fffffffffffff');
             }
 
 
