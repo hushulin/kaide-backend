@@ -31,10 +31,10 @@ class KaideSwoole extends Command {
 
         $fd = Cache::get('fd' , array());
         $fd = array_push($fd , time());
-        Cache::set('fd' , $fd);
+        Cache::put('fd' , $fd);
         $fd = Cache::get('fd' , array());
         $fd = array_push($fd , time());
-        Cache::set('fd' , $fd);
+        Cache::put('fd' , $fd);
 
         $serv = new swoole_server("0.0.0.0", 8089);
 
