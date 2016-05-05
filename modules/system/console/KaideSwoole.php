@@ -29,14 +29,12 @@ class KaideSwoole extends Command {
 
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
 
-        $fd = Cache::get('fd');
-        $fd .= "|" . time();
-        $fd = trim($fd , "|");
-        Cache::add('fd' , '$fd' , 9999999999);
-        $fd = Cache::get('fd');
-        $fd .= "|" . time();
-        $fd = trim($fd , "|");
-        Cache::add('fd' , '$fd' , 9999999999);
+        $fd = Cache::get('fd' , array());
+        $fd = array_merge($fd , time());
+        Cache::set('fd' , $fd);
+        $fd = Cache::get('fd' , array());
+        $fd = array_merge($fd , time());
+        Cache::set('fd' , $fd);
 
         $serv = new swoole_server("0.0.0.0", 8089);
 
