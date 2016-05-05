@@ -32,11 +32,11 @@ class KaideSwoole extends Command {
         $fd = Cache::get('fd');
         $fd .= "|" . time();
         $fd = trim($fd , "|");
-        Cache::put('fd' , $fd , 9999999999);
+        Cache::add('fd' , '$fd' , 9999999999);
         $fd = Cache::get('fd');
         $fd .= "|" . time();
         $fd = trim($fd , "|");
-        Cache::put('fd' , $fd , 9999999999);
+        Cache::add('fd' , '$fd' , 9999999999);
 
         $serv = new swoole_server("0.0.0.0", 8089);
 
