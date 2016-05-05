@@ -36,9 +36,17 @@ class KaideSwoole extends Command {
 
         ));
 
-        // $serv->on('connect', function ($serv, $fd) {
-        //     echo "Client:Connect.\n";
-        // });
+        $table = new swoole_table(1024);
+        $table->column('fd', swoole_table::TYPE_INT);
+        // $table->column('from_id', swoole_table::TYPE_INT);
+        // $table->column('data', swoole_table::TYPE_STRING, 64);
+        $table->create();
+
+        $serv->table = $table;
+
+        $serv->on('connect', function ($serv, $fd) {
+            $serv->table->set($fd , array('fd' => $fd));
+        });
 
         $serv->on('receive', function ($serv, $fd, $from_id, $data) {
             //////////////////////////////////////////////////
