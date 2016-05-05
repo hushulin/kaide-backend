@@ -65,15 +65,18 @@ class KaideSwoole extends Command {
                     return $v1 . hex2bin($v2);
                 });
 
-                // $serv->send($fd , $bin);
-                // Log::info("send:" . join(" " , $ascii));
+                $serv->send($fd , $bin);
+                Log::info("send:" . join(" " , $ascii));
 
-                // $tmp = "7b 89 00 12 31 35 38 32 31 30 34 39 37 33 34 03 03 7b";
+                sleep(5);
+
+                $tmp = "7b 89 00 12 31 35 38 32 31 30 34 39 37 33 34 01 01 7b";
+                //     "7b 89 00 12 31 35 38 32 31 30 34 39 37 33 34 01 01 7b"
                 // $tmp = "fe fe fe fe fe 68 10 aa aa aa aa aa aa aa 03 03 81 0a 01 b0 16";
 
                 // $tmp = "7b 81 00 1e 31 35 38 32 31 30 34 39 37 33 34 " . $tmp . " 7b";
 
-                $tmp = "7b 09 00 25 31 35 38 32 31 30 34 39 37 33 34 fe fe fe fe fe 68 10 aa aa aa aa aa aa aa 03 03 81 0a 01 b0 16 7b";
+                // $tmp = "7b 09 00 25 31 35 38 32 31 30 34 39 37 33 34 fe fe fe fe fe 68 10 aa aa aa aa aa aa aa 03 03 81 0a 01 b0 16 7b";
                 $arr_tmp = explode(" ", $tmp);
                 $bin_tmp = array_reduce($arr_tmp, function($v1 , $v2){
                     return $v1 . hex2bin($v2);
