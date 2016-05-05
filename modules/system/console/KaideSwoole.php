@@ -5,6 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Log;
 use swoole_server;
+use swoole_table;
 
 class KaideSwoole extends Command {
     /**
