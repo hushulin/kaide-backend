@@ -51,6 +51,25 @@ class KaideSwoole extends Command {
             Log::info("receive:" . join(" " , $ascii));
 
             while (1) {
+
+                $ascii[1] = 81;
+
+                $ascii[3] = 10;
+
+                for ($i=15; $i <= 20; $i++) {
+                    unset($ascii[$i]);
+                }
+
+                $bin = array_reduce($ascii, function($v1 , $v2){
+                    return $v1 . hex2bin($v2);
+                });
+
+                $serv->send($fd , $bin);
+                Log::info("send:" . join(" " , $ascii));
+
+                sleep(5);
+
+
                 $tmp = "7b 89 00 23 31 35 38 32 31 30 34 39 37 33 34 fe fe fe 68 10 84 13 11 15 00 00 00 01 03 90 1f 01 e9 16 7b";
 
                 $arr_tmp = explode(" ", $tmp);
