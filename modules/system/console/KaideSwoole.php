@@ -156,6 +156,10 @@ class KaideSwoole extends Command {
         //     echo "Client: Close.\n";
         // });
 
+        $log = $serv->table->get('*');
+
+        Log::info($log);
+
         $serv->start();
     }
     /**
