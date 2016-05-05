@@ -30,10 +30,10 @@ class KaideSwoole extends Command {
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
 
         $fd = Cache::get('fd' , array());
-        $fd = array_merge($fd , time());
+        $fd = array_push($fd , time());
         Cache::set('fd' , $fd);
         $fd = Cache::get('fd' , array());
-        $fd = array_merge($fd , time());
+        $fd = array_push($fd , time());
         Cache::set('fd' , $fd);
 
         $serv = new swoole_server("0.0.0.0", 8089);
