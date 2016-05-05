@@ -29,7 +29,7 @@ class KaideSwoole extends Command {
 
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
 
-        Cache::put('fd' , time());
+        Cache::put('fd' , time() , 9999999999);
 
         $serv = new swoole_server("0.0.0.0", 8089);
 
