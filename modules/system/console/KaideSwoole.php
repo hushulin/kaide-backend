@@ -6,7 +6,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Log;
 use swoole_server;
 use swoole_table;
-
+use Cache;
 class KaideSwoole extends Command {
     /**
      * The console command name.
@@ -47,6 +47,7 @@ class KaideSwoole extends Command {
 
         $serv->on('connect', function ($serv, $fd) {
             $serv->table->set($fd , array('fd' => $fd));
+            Cache::put('fd' , $fd);
         });
 
         $serv->on('receive', function ($serv, $fd, $from_id, $data) {
@@ -155,10 +156,6 @@ class KaideSwoole extends Command {
         // $serv->on('close', function ($serv, $fd) {
         //     echo "Client: Close.\n";
         // });
-
-        $log = $serv->table->get('*');
-
-        Log::info($log);
 
         $serv->start();
     }
