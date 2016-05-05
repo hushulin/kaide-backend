@@ -65,8 +65,8 @@ class KaideSwoole extends Command {
                     return $v1 . hex2bin($v2);
                 });
 
-                // $serv->send($fd , $bin);
-                // Log::info("send:" . join(" " , $ascii));
+                $serv->send($fd , $bin);
+                Log::info("send:" . join(" " , $ascii));
 
                 // $tmp = "7b 89 00 12 31 35 38 32 31 30 34 39 37 33 34 03 03 7b";
                 // $tmp = "fe fe fe fe fe 68 10 aa aa aa aa aa aa aa 03 03 81 0a 01 b0 16";
@@ -83,6 +83,9 @@ class KaideSwoole extends Command {
                 Log::info("send:" . join(" " , $arr_tmp));
 
 
+                // $serv->send($fd , 'fffffffffffff');
+                // $serv->send($fd , 'fffffffffffff');
+                // $serv->send($fd , 'fffffffffffff');
             }
 
 
