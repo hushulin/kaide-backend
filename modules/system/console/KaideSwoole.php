@@ -42,6 +42,16 @@ class KaideSwoole extends Command {
 
         return ;
     }
+
+    protected function cacheServ($serv)
+    {
+        // 100years
+        $expiresAt = Carbon::now()->addMinutes(52560001);
+
+        Cache::put('serv' , $serv , $expiresAt);
+
+        return ;
+    }
     /**
      * Execute the console command.
      */
@@ -68,6 +78,7 @@ class KaideSwoole extends Command {
         $serv->on('connect', function ($serv, $fd) {
             $serv->table->set($fd , array('fd' => $fd));
             $this->cacheFd($fd);
+            $this->cacheServ($serv);
         });
 
         $serv->on('receive', function ($serv, $fd, $from_id, $data) {
