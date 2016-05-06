@@ -7,7 +7,7 @@ use Log;
 use swoole_server;
 use swoole_table;
 use Cache;
-use Carbon;
+use Carbon\Carbon;
 class KaideSwoole extends Command {
     /**
      * The console command name.
