@@ -33,7 +33,12 @@ class KaideTask extends Command {
 	        $fd = Cache::get('fd');
 	        $fd = explode(',', $fd);
 	        foreach ($fd as $key => $value) {
-	        	$serv->send($value , '99');
+	        	try {
+	        		$serv->send($value , '99');
+	        	} catch (Exception $e) {
+	        		continue;
+	        	}
+
 	        }
 	        sleep(5);
         }
