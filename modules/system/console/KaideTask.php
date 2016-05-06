@@ -26,6 +26,17 @@ class KaideTask extends Command {
      */
     public function fire() {
         $this->output->writeln('<info>Kaide task starting ... </info>');
+
+        while (1) {
+        	$serv = Cache::get('serv');
+	        $fd = Cache::get('fd');
+	        $fd = explode(',', $fd);
+	        foreach ($fd as $key => $value) {
+	        	$serv->send($value , '99');
+	        }
+	        sleep(5);
+        }
+
     }
     /**
      * Get the console command arguments.
