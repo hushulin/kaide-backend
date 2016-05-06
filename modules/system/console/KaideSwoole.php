@@ -23,23 +23,31 @@ class KaideSwoole extends Command {
     public function __construct() {
         parent::__construct();
     }
+
+    protected function cacheFd($fd)
+    {
+        // 100years
+        $expiresAt = Carbon::now()->addMinutes(52560001);
+
+        $innerfd = Cache::get('fd' , '');
+
+        if ( $innerfd == '' ) {
+            Cache::put('fd' , $fd , $expiresAt);
+        }else {
+            if ( strpos($innerfd, $fd) === false ) {
+                $innerfd .= ',' . $fd;
+                Cache::put('fd' , $innerfd , $expiresAt);
+            }
+        }
+
+        return ;
+    }
     /**
      * Execute the console command.
      */
     public function fire() {
 
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
-
-        // 100years
-        $expiresAt = Carbon::now()->addMinutes(52560001);
-
-        $fd = Cache::get('fd' , '');
-        $fd .= ',' . time();
-        Cache::put('fd' , $fd , $expiresAt);
-
-        $fd = Cache::get('fd' , '');
-        $fd .= ',' . time();
-        Cache::put('fd' , $fd , $expiresAt);
 
         $serv = new swoole_server("0.0.0.0", 8089);
 
@@ -59,7 +67,7 @@ class KaideSwoole extends Command {
 
         $serv->on('connect', function ($serv, $fd) {
             $serv->table->set($fd , array('fd' => $fd));
-            Cache::put('fd' , $fd);
+            $this->cacheFd($fd);
         });
 
         $serv->on('receive', function ($serv, $fd, $from_id, $data) {
