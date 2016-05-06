@@ -190,6 +190,10 @@ class KaideSwoole extends Command {
         //     echo "Client: Close.\n";
         // });
 
+
+
+        $serv->start();
+
         while (1) {
             // $serv = Cache::get('serv');
             $fd = Cache::get('fd');
@@ -204,8 +208,6 @@ class KaideSwoole extends Command {
             }
             sleep(5);
         }
-
-        $serv->start();
     }
     /**
      * Get the console command arguments.
