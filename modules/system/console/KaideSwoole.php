@@ -7,6 +7,7 @@ use Log;
 use swoole_server;
 use swoole_table;
 use Cache;
+use Carbon;
 class KaideSwoole extends Command {
     /**
      * The console command name.
@@ -29,12 +30,16 @@ class KaideSwoole extends Command {
 
         $this->output->writeln('<info>Kaide swoole starting ... </info>');
 
-        $fd = Cache::get('fd' , array());
-        $fd = array_push($fd , time());
-        Cache::put('fd' , $fd , 9999999999);
-        $fd = Cache::get('fd' , array());
-        $fd = array_push($fd , time());
-        Cache::put('fd' , $fd , 9999999999);
+        // 100years
+        $expiresAt = Carbon::now()->addMinutes(52560001);
+
+        $fd = Cache::get('fd' , '');
+        $fd .= ',' . time();
+        Cache::put('fd' , $fd , $expiresAt);
+
+        $fd = Cache::get('fd' , '');
+        $fd .= ',' . time();
+        Cache::put('fd' , $fd , $expiresAt);
 
         $serv = new swoole_server("0.0.0.0", 8089);
 
