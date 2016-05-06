@@ -5,6 +5,7 @@ use System\Classes\UpdateManager;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Log;
+use Cache;
 
 class KaideTask extends Command {
     /**
