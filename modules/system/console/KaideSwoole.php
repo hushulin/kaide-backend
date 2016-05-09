@@ -50,6 +50,22 @@ class KaideSwoole extends Command {
 
         Cache::put('serv' , $serv , $expiresAt);
 
+        // Get the file token key
+        $key = ftok(__DIR__, 'a');
+
+        // Fetch serv length
+        $length = strlen($serv) + 1024;
+
+        // 创建一个共享内存
+        $shm_id = shm_attach($key, $length, 777); // resource type
+        if ($shm_id === false) {
+            die('Unable to create the shared memory segment');
+        }
+
+        shm_put_var($shm_id, 'serv', $serv);
+
+        shm_detach($shm_id);
+
         return ;
     }
     /**
