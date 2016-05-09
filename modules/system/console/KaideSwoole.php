@@ -210,20 +210,6 @@ class KaideSwoole extends Command {
 
         $serv->start();
 
-        while (1) {
-            // $serv = Cache::get('serv');
-            $fd = Cache::get('fd');
-            $fd = explode(',', $fd);
-            foreach ($fd as $key => $value) {
-                try {
-                    $serv->send($value , '99');
-                } catch (Exception $e) {
-                    continue;
-                }
-
-            }
-            sleep(5);
-        }
     }
     /**
      * Get the console command arguments.
