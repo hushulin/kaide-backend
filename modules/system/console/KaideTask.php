@@ -53,7 +53,7 @@ class KaideTask extends Command {
 	        foreach ($fd as $key => $value) {
 	        	try {
 	        		$serv->send($value , '99');
-	        	} catch (Exception $e) {
+	        	} catch (ErrorException $e) {
 	        		continue;
 	        	}
 
