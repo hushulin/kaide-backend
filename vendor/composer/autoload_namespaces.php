@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phpDocumentor' => array($vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'TrafficCophp' => array($vendorDir . '/TrafficCophp/ByteBuffer/src'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
@@ -20,6 +22,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'ParsedownExtra' => array($vendorDir . '/erusev/parsedown-extra'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'Less' => array($vendorDir . '/oyejorge/less.php/lib'),
@@ -33,5 +36,7 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Cron' => array($vendorDir . '/mtdowling/cron-expression/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src'),
+    'Aysheka\\Socket\\Test' => array($vendorDir . '/aysheka/socket/test'),
+    'Aysheka\\Socket' => array($vendorDir . '/aysheka/socket/src'),
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
 );

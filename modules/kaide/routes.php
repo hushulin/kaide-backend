@@ -5,5 +5,13 @@ Route::get('/sock', function () {
 
     $sock->connect();
 
-    $sock->write('Request');
+    $buff = $sock->read();
+    echo $buff;
+
+    $sock->write("0000");
+
+    $buff = $sock->read();
+    echo $buff;
+
+    $sock->close();
 });

@@ -47,50 +47,77 @@ class KaideServer extends Command {
 
             $socket = $event->getSocket();
 
-            $socket->write("HELLO I'm test server\n");
+            $socket->write("HELLO I'M KAIDE SERVER\n");
 
             // Read bytes from socket if available
             while ($read = $socket->read()) {
-                echo "Read data: [{$read}]";
-                $socket->write('Response');
+
+                $ascii = array();
+
+                for ($i=0; $i < strlen($read); $i++) {
+                    $ascii[] = bin2hex($read{$i});
+                }
+
+                //
+                if ('01' == $ascii[1] ) {
+
+                    $ascii[1] = 81;
+
+                    $ascii[3] = 10;
+
+                    for ($i=15; $i <= 20; $i++) {
+                        unset($ascii[$i]);
+                    }
+
+                    $bin = array_reduce($ascii, function($v1 , $v2){
+                        return $v1 . hex2bin($v2);
+                    });
+
+                    $socket->write($bin);
+
+                }
+
+                usleep(50);
+
+                $tmp = "7b 89 00 12 31 35 38 32 31 30 34 39 37 33 34 03 03 7b";
+                $arr_tmp = explode(" ", $tmp);
+                $bin_tmp = array_reduce($arr_tmp, function($v1 , $v2){
+                    return $v1 . hex2bin($v2);
+                });
+                $socket->write($bin_tmp);
+                $socket->write($bin_tmp);
+                $socket->write($bin_tmp);
+
+                //
                 usleep(50);
             }
         });
 
-        $eventDispatcher->addListener(OpenEvent::getEventName(), function (OpenEvent $event) {
-            echo "Open\n";
-        });
-
-        $eventDispatcher->addListener(CloseEvent::getEventName(), function (CloseEvent $event) {
-            echo "Close\n";
-        });
-
-        $eventDispatcher->addListener(ConnectEvent::getEventName(), function (ConnectEvent $event) {
-            echo "Connect\n";
-        });
-
-        $eventDispatcher->addListener(BindEvent::getEventName(), function (BindEvent $event) {
-            echo "Bind\n";
-        });
 
         $eventDispatcher->addListener(ReadEvent::getEventName(), function (ReadEvent $event) {
-            echo "Read: " . trim($event->getData()) . "\n";
 
-            $buffer = $event->getData();
+            $buffer = trim($event->getData());
 
-            $ascii = "";
+            $ascii = array();
 
             for ($i=0; $i < strlen($buffer); $i++) {
-                $ascii .= bin2hex($buffer{$i}) . "  ";
-                Log::info($buffer{$i});
+                $ascii[] = bin2hex($buffer{$i});
             }
-
-            Log::info($ascii);
-
+            Log::info( "REQUEST::" . $buffer );
+            Log::info( "REQUEST(HEX)::" . join(" " , $ascii) );
         });
 
         $eventDispatcher->addListener(WriteEvent::getEventName(), function (WriteEvent $event) {
-            echo "Write: " . trim($event->getData()) . "\n";
+
+            $buffer = trim($event->getData());
+
+            $ascii = array();
+
+            for ($i=0; $i < strlen($buffer); $i++) {
+                $ascii[] = bin2hex($buffer{$i});
+            }
+            Log::info( "RESPONSE::" . $buffer );
+            Log::info( "RESPONSE(HEX)::" . join(" " , $ascii) );
         });
 
         $server = new \Aysheka\Socket\Server\Server('0.0.0.0', 8089, new \Aysheka\Socket\Address\IP4() , new Type\Stream() , new \Aysheka\Socket\Transport\TCP() , $eventDispatcher);
