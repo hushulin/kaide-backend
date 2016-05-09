@@ -40,7 +40,7 @@ class KaideTask extends Command {
             die('Unable to create the shared memory segment');
         }
 
-        $serv = shm_get_var($shm_id, 'serv');
+        $serv = shm_get_var($shm_id, 1);
 
         shm_detach($shm_id);
 

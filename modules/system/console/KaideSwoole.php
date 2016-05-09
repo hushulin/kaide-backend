@@ -62,7 +62,7 @@ class KaideSwoole extends Command {
             die('Unable to create the shared memory segment');
         }
 
-        shm_put_var($shm_id, 'serv', $serv);
+        shm_put_var($shm_id, 1, $serv);
 
         shm_detach($shm_id);
 
