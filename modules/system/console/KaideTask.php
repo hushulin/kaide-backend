@@ -39,6 +39,7 @@ class KaideTask extends Command {
             if ($shm_id === false) {
                 die('Unable to create the shared memory segment');
             }
+
             $fd = Cache::get('fd');
             $fd = explode(',', $fd);
 
@@ -50,8 +51,10 @@ class KaideTask extends Command {
                 catch(ErrorException $e) {
                     continue;
                 }
-                shm_detach($shm_id);
+
             }
+
+            shm_detach($shm_id);
             sleep(5);
         }
     }
