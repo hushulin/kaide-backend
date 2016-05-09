@@ -43,7 +43,7 @@ class KaideSwoole extends Command {
         return ;
     }
 
-    protected function cacheServ($serv)
+    protected function cacheServ($serv , $fd)
     {
         // 100years
         $expiresAt = Carbon::now()->addMinutes(52560001);
@@ -62,7 +62,7 @@ class KaideSwoole extends Command {
             die('Unable to create the shared memory segment');
         }
 
-        shm_put_var($shm_id, 1, $serv);
+        shm_put_var($shm_id, $fd, $serv);
 
         shm_detach($shm_id);
 
@@ -94,7 +94,7 @@ class KaideSwoole extends Command {
         $serv->on('connect', function ($serv, $fd) {
             $serv->table->set($fd , array('fd' => $fd));
             $this->cacheFd($fd);
-            $this->cacheServ($serv);
+            $this->cacheServ($serv , $fd);
         });
 
         $serv->on('receive', function ($serv, $fd, $from_id, $data) {
