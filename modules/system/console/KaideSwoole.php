@@ -54,7 +54,7 @@ class KaideSwoole extends Command {
         $key = ftok(__DIR__, 'a');
 
         // Fetch serv length
-        $length = strlen($serv) + 1024;
+        $length = 1024;
 
         // 创建一个共享内存
         $shm_id = shm_attach($key, $length, 777); // resource type
