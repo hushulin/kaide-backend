@@ -42,8 +42,6 @@ class KaideTask extends Command {
 
         $serv = shm_get_var($shm_id, 1);
 
-        Log::info((string)$serv);
-
         shm_detach($shm_id);
 
         while (1) {
